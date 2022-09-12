@@ -97,13 +97,17 @@ int main () {
             cout<<"--------------------------"<<endl;
 
         }
-        else {
+        else if (action == 'c') {
             //Checkout
             cart.viewCart();
             if (checkout(cart)) {
                 break;
             }
         }
+        else {
+            cout<<"Invalid Choice \n";
+        }
     }
+    return 0;
     
 }
