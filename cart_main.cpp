@@ -6,12 +6,12 @@ using namespace std;
 
 
 vector<Product> allProducts = {
-    Product(1,"apple",26),
-    Product(2,"mango",16),
-    Product(3,"guava",36),
-    Product(4,"banana",56),
-    Product(5,"strawberry",29),
-    Product(6,"pineapple",20)
+    Product(1,"(a)pple",26),
+    Product(2,"(m)ango",16),
+    Product(3,"(g)uava",36),
+    Product(4,"(b)anana",56),
+    Product(5,"(s)trawberry",29),
+    Product(6,"(p)ineapple",20)
 };
 
 Product* chooseProduct() {
