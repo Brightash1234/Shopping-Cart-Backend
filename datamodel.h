@@ -20,7 +20,7 @@ public:
 		return name + " : Rs " + to_string(price) + "\n";
 	}
 	string getShortName() {
-        return name.substr(0,1);
+        return name.substr(1,1);
 	}
 
 	friend class Item;
@@ -64,7 +64,10 @@ public:
 	}
 
 	void removeProduct(int id) {
-          if (items.count(id) == 0) {
+		  if (items.empty()) {
+               cout<<"Your cart is empty\n";
+		  }
+          else if (items.count(id) == 0) {
           	cout<<"Item not available in the cart \n";
           }
           else {
