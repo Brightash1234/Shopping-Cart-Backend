@@ -23,6 +23,7 @@ Product* chooseProduct() {
     }
     cout<<productList<<endl;
     cout<<"--------------------------"<<endl;
+    cout<<"Enter your choice : "<<endl;
     string choice;
     cin>>choice;
     for (int i = 0; i< allProducts.size();i++) {
@@ -35,7 +36,11 @@ Product* chooseProduct() {
 }
 bool checkout(Cart &cart) {
     if (cart.isEmpty()) {
-        return false;
+        char choice ; 
+        cout<<"Do you want to continue shopping(y/n) : \n";
+        cin>>choice;
+        if (choice == 'n') return true;
+        else return false;
     }
     int total = cart.getTotal();
     cout<<"Pay in Cash : ";
@@ -83,12 +88,17 @@ int main () {
             }
         }
         else if (action == 'r') {
-           
+            if (cart.isEmpty()) {
+                cout<<"Your cart is empty\n";
+            }
+            else {
+            cout<<cart.viewCart();
             cout<<"Enter the product you want to remove : "<<endl;
             char choice;
             cin>>choice;
             if (mp.count(choice) == 0) cout<<"You have entered the wrong choice \n";
             else cart.removeProduct(mp[choice]);
+               }
         }
         else if (action == 'v') {
             //View the cart
@@ -99,7 +109,7 @@ int main () {
         }
         else if (action == 'c') {
             //Checkout
-            cart.viewCart();
+            cout<<cart.viewCart();
             if (checkout(cart)) {
                 break;
             }
