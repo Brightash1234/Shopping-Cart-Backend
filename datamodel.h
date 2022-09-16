@@ -88,9 +88,7 @@ public:
 	}
 
 	string viewCart() {
-		if(items.empty()) {
-			return "Cart is empty\n";
-		}
+		
 		string itemizedList;
 		int cartTotal = getTotal();
 
@@ -99,7 +97,7 @@ public:
 			itemizedList.append(item.getItemInfo());
 		}
 
-		return itemizedList + "\n Total amount : Rs: " + to_string(cartTotal) + '\n';
+		return itemizedList + "\nTotal amount : Rs: " + to_string(cartTotal) + '\n';
 	}
 		bool isEmpty() {
 			return items.empty();
