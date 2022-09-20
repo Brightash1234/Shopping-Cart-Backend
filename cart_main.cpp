@@ -96,8 +96,11 @@ int main () {
             cout<<"Enter the product you want to remove : "<<endl;
             char choice;
             cin>>choice;
+            cout<<"Enter the quantity you want to remove :"<<endl;
+            int q;
+            cin>>q;
             if (mp.count(choice) == 0) cout<<"You have entered the wrong choice \n";
-            else cart.removeProduct(mp[choice]);
+            else cart.removeProduct(mp[choice],q);
                }
         }
         else if (action == 'v') {
